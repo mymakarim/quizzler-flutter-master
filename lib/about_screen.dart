@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:quizzler/contact_screen.dart';
 import 'package:quizzler/helper.dart';
 import 'package:quizzler/scenario_screen.dart';
 
@@ -19,7 +20,7 @@ class _AboutScreenState extends State<AboutScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double _varHeight = MediaQuery.of(context).size.height/2;
+    double _varHeight = MediaQuery.of(context).size.height / 2;
     return Directionality(
       textDirection: Helper.getDirection(lang: language),
       child: Scaffold(
@@ -42,7 +43,9 @@ class _AboutScreenState extends State<AboutScreen> {
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(50.0), topRight: Radius.circular(50.0)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50.0),
+                            topRight: Radius.circular(50.0)),
                         color: Colors.white,
                       ),
                       child: Padding(
@@ -88,14 +91,24 @@ class _AboutScreenState extends State<AboutScreen> {
                         color: Color(0xFFFFEDEE),
                         borderRadius: BorderRadius.circular(40),
                       ),
-                      child: SvgPicture.asset("assets/icons/person.svg"),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return ContactScreen(lang: language,);
+                          }));
+                        },
+                        child: SvgPicture.asset("assets/icons/person.svg"),
+                      ),
                     ),
                     SizedBox(width: 20),
                     Expanded(
                       child: InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return ScenarioScreen(lang: language,);
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return ScenarioScreen(
+                              lang: language,
+                            );
                           }));
                         },
                         child: Container(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:quizzler/contact_screen.dart';
 import 'package:quizzler/helper.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:quizzler/scenario.dart';
@@ -40,11 +41,24 @@ class _ScenarioScreenState extends State<ScenarioScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           Navigator.pop(context);
                         },
-                          child: SvgPicture.asset("assets/icons/arrow-left.svg")),
-                      SvgPicture.asset("assets/icons/person.svg"),
+                        child: SvgPicture.asset("assets/icons/arrow-left.svg"),
+                      ),
+                      Text(Helper.scenarioTitle(lang: language),
+                          style: kTitleTextStyle),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return ContactScreen(lang: language,);
+                          }));
+                        },
+                        child: SvgPicture.asset(
+                          "assets/icons/person.svg",
+                          width: 25,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -54,7 +68,7 @@ class _ScenarioScreenState extends State<ScenarioScreen> {
 //                Text(Helper.scenarioChoose(lang: language),
 //                    style: kSubheadingTextStyle),
                 Container(
-                  height: (scenarios.length/2) * 270.0,
+                  height: (scenarios.length / 2) * 270.0,
                   padding: EdgeInsets.only(top: 30),
                   child: StaggeredGridView.countBuilder(
                     physics: NeverScrollableScrollPhysics(),
@@ -65,9 +79,13 @@ class _ScenarioScreenState extends State<ScenarioScreen> {
                     mainAxisSpacing: 20,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return TopicScreen(lang: language, scenarioID: scenarios[index].scenarioID,);
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return TopicScreen(
+                              lang: language,
+                              scenarioID: scenarios[index].scenarioID,
+                            );
                           }));
                         },
                         child: Container(
@@ -76,7 +94,8 @@ class _ScenarioScreenState extends State<ScenarioScreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
                             image: DecorationImage(
-                                image: AssetImage(scenarios[index].scenarioImage),
+                                image:
+                                    AssetImage(scenarios[index].scenarioImage),
                                 fit: BoxFit.cover,
                                 alignment: Alignment.topCenter),
                           ),
@@ -85,7 +104,8 @@ class _ScenarioScreenState extends State<ScenarioScreen> {
                             children: <Widget>[
                               Text(
                                 scenarios[index].scenarioName,
-                                style: kTitleTextStyle,
+                                style: kTitleTextStyle.copyWith(
+                                    color: Colors.white),
                               ),
                               Text(
                                 '${scenarios[index].scenarioDesc}',

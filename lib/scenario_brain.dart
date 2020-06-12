@@ -3,32 +3,32 @@ import 'scenario.dart';
 class ScenarioBrain {
 
   List<Scenario> scenarioBank = [
-    Scenario(sID: 1, name: "Conduct of Hostilitie", desc: "5 Scenarios", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 2, name: "Basic Rights", desc: "4 Scenarios", image: "assets/images/photography.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 3, name: "Tactics", desc: "4 Scenarios", image: "assets/images/music.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 4, name: "Weapons", desc: "3 Scenarios", image: "assets/images/business.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 5, name: "Children", desc: "3 Scenarios", image: "assets/images/business.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 6, name: "Health Care and Aid", desc: "4 Scenarios", image: "assets/images/business.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 7, name: "Commander ...", desc: "10 Scenarios", image: "assets/images/business.png", imageBig: "assets/images/scenario_single.png"),
+    Scenario(sID: 1, name: "Conduct of Hostilitie", desc: "5 Scenarios", image: "assets/images/category1.png", imageBig: "assets/images/big1.jpg"),
+    Scenario(sID: 2, name: "Basic Rights", desc: "4 Scenarios", image: "assets/images/category2.png", imageBig: "assets/images/big2.jpg"),
+    Scenario(sID: 3, name: "Tactics", desc: "4 Scenarios", image: "assets/images/category3.png", imageBig: "assets/images/big3.jpg"),
+    Scenario(sID: 4, name: "Weapons", desc: "3 Scenarios", image: "assets/images/category4.png", imageBig: "assets/images/big4.jpg"),
+    Scenario(sID: 5, name: "Children", desc: "3 Scenarios", image: "assets/images/category5.png", imageBig: "assets/images/big5.jpg"),
+    Scenario(sID: 6, name: "Health Care and Aid", desc: "4 Scenarios", image: "assets/images/category6.png", imageBig: "assets/images/big6.jpg"),
+    Scenario(sID: 7, name: "Commander Phase", desc: "10 Scenarios", image: "assets/images/category7.png", imageBig: "assets/images/big7.jpg"),
   ];
 
   List<Scenario> scenarioDari = [
-    Scenario(sID: 100, name: "انجام خصومتها", desc: "5 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 101, name: "حقوق اساسی", desc: "4 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 102, name: "تاکتیکها", desc: "4 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 103, name: "سلاح ها", desc: "3 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 104, name: "اطفال", desc: "3 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 105, name: "بهداشت و کمک", desc: "4 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 106, name: "فاز فرمانده", desc: "10 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
+    Scenario(sID: 100, name: "انجام خصومتها", desc: "5 سناریو", image: "assets/images/category1.png", imageBig: "assets/images/big1.jpg"),
+    Scenario(sID: 101, name: "حقوق اساسی", desc: "4 سناریو", image: "assets/images/category2.png", imageBig: "assets/images/big2.jpg"),
+    Scenario(sID: 102, name: "تاکتیکها", desc: "4 سناریو", image: "assets/images/category3.png", imageBig: "assets/images/big3.jpg"),
+    Scenario(sID: 103, name: "اسلحه ها", desc: "3 سناریو", image: "assets/images/category4.png", imageBig: "assets/images/big4.jpg"),
+    Scenario(sID: 104, name: "اطفال", desc: "3 سناریو", image: "assets/images/category5.png", imageBig: "assets/images/big5.jpg"),
+    Scenario(sID: 105, name: "بهداشت و کمک", desc: "4 سناریو", image: "assets/images/category6.png", imageBig: "assets/images/big6.jpg"),
+    Scenario(sID: 106, name: "فاز فرمانده", desc: "10 سناریو", image: "assets/images/category7.png", imageBig: "assets/images/big7.jpg"),
   ];
   List<Scenario> scenarioPashto = [
-    Scenario(sID: 200, name: "د دښمنیو تررسه کول", desc: "5 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 201, name: "بنسټیز حقونه", desc: "4 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 202, name: "تکتیکونه", desc: "4 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 203, name: "وسلی", desc: "3 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 204, name: "ماشومان", desc: "3 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 205, name: "روغتیا پاملرنه او مرسته", desc: "4 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
-    Scenario(sID: 206, name: "د قوماندان پړاو", desc: "10 سناریو", image: "assets/images/marketing.png", imageBig: "assets/images/scenario_single.png"),
+    Scenario(sID: 200, name: "د دښمنیو تررسه کول", desc: "5 سناریو", image: "assets/images/category1.png", imageBig: "assets/images/big1.jpg"),
+    Scenario(sID: 201, name: "بنسټیز حقونه", desc: "4 سناریو", image: "assets/images/category2.png", imageBig: "assets/images/big2.jpg"),
+    Scenario(sID: 202, name: "تکتیکونه", desc: "4 سناریو", image: "assets/images/category3.png", imageBig: "assets/images/big3.jpg"),
+    Scenario(sID: 203, name: "وسلی", desc: "3 سناریو", image: "assets/images/category4.png", imageBig: "assets/images/big4.jpg"),
+    Scenario(sID: 204, name: "ماشومان", desc: "3 سناریو", image: "assets/images/category5.png", imageBig: "assets/images/big5.jpg"),
+    Scenario(sID: 205, name: "روغتیا پاملرنه او مرسته", desc: "4 سناریو", image: "assets/images/category6.png", imageBig: "assets/images/big6.jpg"),
+    Scenario(sID: 206, name: "د قوماندان پړاو", desc: "10 سناریو", image: "assets/images/category7.png", imageBig: "assets/images/big7.jpg"),
   ];
 
 

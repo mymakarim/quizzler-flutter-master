@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                SizedBox(height: MediaQuery.of(context).size.height/2),
+                SizedBox(height: MediaQuery.of(context).size.height/2 + 130),
                 ListTile(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {

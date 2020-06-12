@@ -63,9 +63,13 @@ flutter:
         - asset: fonts/BalooTamma2-Medium.ttf
         - asset: fonts/BalooTamma2-Regular.ttf
         - asset: fonts/BalooTamma2-SemiBold.ttf
-    - family: Yekan
+    - family: iranSans
       fonts:
-        - asset: fonts/Yekan.ttf
+        - asset: fonts/IRANSans.ttf
+        - asset: fonts/IRANSans_Bold.ttf
+        - asset: fonts/IRANSans_Light.ttf
+        - asset: fonts/IRANSans_Medium.ttf
+        - asset: fonts/IRANSans_UltraLight.ttf
     - family: Nassim
       fonts:
         - asset: fonts/NassimArabic.woff

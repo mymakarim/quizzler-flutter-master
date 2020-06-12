@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quizzler/helper.dart';
 import 'package:quizzler/quiz_brain.dart';
 import 'package:quizzler/scenario_screen.dart';
+import 'package:quizzler/contact_screen.dart';
 
 class SummaryScreen extends StatefulWidget {
   final dynamic topicID;
@@ -11,7 +12,8 @@ class SummaryScreen extends StatefulWidget {
   const SummaryScreen({Key key, this.topicID, this.lang}) : super(key: key);
 
   @override
-  _SummaryScreenState createState() => _SummaryScreenState(this.topicID, this.lang);
+  _SummaryScreenState createState() =>
+      _SummaryScreenState(this.topicID, this.lang);
 }
 
 class _SummaryScreenState extends State<SummaryScreen> {
@@ -38,7 +40,8 @@ class _SummaryScreenState extends State<SummaryScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
                       child: Text(
                         Helper.answerKey(lang: widget.lang),
                         style: TextStyle(
@@ -49,36 +52,40 @@ class _SummaryScreenState extends State<SummaryScreen> {
                     ),
                     (quizBrain.questionBank[0].questionDesc != null)
                         ? Container(
-                      height: double.maxFinite,
-                      child: ListView.separated(
-                        padding: EdgeInsets.all(0),
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            leading: Text(
-                              (index < 10)? "0${index+1}." : "${index + 1}.",
-                              style: TextStyle(
-                                  color: kGreenColor,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 25),
+                            height: double.maxFinite,
+                            child: ListView.separated(
+                              padding: EdgeInsets.all(0),
+                              itemBuilder: (context, index) {
+                                return ListTile(
+                                  leading: Text(
+                                    (index < 10)
+                                        ? "0${index + 1}."
+                                        : "${index + 1}.",
+                                    style: TextStyle(
+                                        color: kGreenColor,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 25),
+                                  ),
+                                  title: Text(quizBrain
+                                      .questionBank[index].questionText),
+                                  trailing: (quizBrain
+                                          .questionBank[index].questionAnswer)
+                                      ? Helper.svgImage(
+                                          svg: 'assets/icons/checked-green.svg')
+                                      : Helper.svgImage(
+                                          svg: 'assets/icons/cross-red.svg'),
+                                );
+                              },
+                              separatorBuilder:
+                                  (BuildContext context, int index) {
+                                return Divider();
+                              },
+                              itemCount: quizBrain.questionBank.length,
                             ),
-                            title: Text(
-                                quizBrain.questionBank[index].questionText),
-                            trailing: (quizBrain
-                                .questionBank[index].questionAnswer)
-                                ? Helper.svgImage(
-                                svg: 'assets/icons/checked-green.svg')
-                                : Helper.svgImage(svg: 'assets/icons/cross-red.svg'),
-                          );
-                        },
-                        separatorBuilder: (BuildContext context, int index) {
-                          return Divider();
-                        },
-                        itemCount: quizBrain.questionBank.length,
-                      ),
-                    )
+                          )
                         : SizedBox(
-                      height: 40,
-                    ),
+                            height: 40,
+                          ),
                   ],
                 ),
               ),
@@ -112,17 +119,25 @@ class _SummaryScreenState extends State<SummaryScreen> {
                         color: Color(0xFFFFEDEE),
                         borderRadius: BorderRadius.circular(40),
                       ),
-                      child: SvgPicture.asset("assets/icons/person.svg"),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                            return ContactScreen(lang: language,);
+                          }));
+                        },
+                        child: SvgPicture.asset("assets/icons/person.svg"),
+                      ),
                     ),
                     SizedBox(width: 20),
                     Expanded(
                       child: InkWell(
-                        onTap: (){
-                          Navigator.pushAndRemoveUntil<void>(context,
-                              MaterialPageRoute(builder: (_) => ScenarioScreen(lang: language)), (_) => false);
-//                        Navigator.push(context, MaterialPageRoute(builder: (context){
-//                          return ScenarioScreen(lang: language);
-//                        }));
+                        onTap: () {
+//                          Navigator.pushAndRemoveUntil<void>(context,
+//                              MaterialPageRoute(builder: (_) => ScenarioScreen(lang: language)), (_) => false);
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return ScenarioScreen(lang: language);
+                          }));
                         },
                         child: Container(
                           alignment: Alignment.center,

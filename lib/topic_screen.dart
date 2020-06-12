@@ -39,7 +39,8 @@ class _TopicScreenState extends State<TopicScreen> {
               height: double.maxFinite,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(ScenarioBrain(language).scenarioImageBig(scenario)),
+                  image: AssetImage(
+                      ScenarioBrain(language).scenarioImageBig(scenario)),
                   fit: BoxFit.cover,
                   alignment: Alignment.topCenter,
                 ),
@@ -47,7 +48,7 @@ class _TopicScreenState extends State<TopicScreen> {
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: MediaQuery.of(context).size.height/2),
+                    SizedBox(height: MediaQuery.of(context).size.height / 2),
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -62,22 +63,21 @@ class _TopicScreenState extends State<TopicScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text(ScenarioBrain(language).scenarioName(scenario), style: kHeadingTextStyle),
-                              Text("${topics.length.toString()} ${Helper.topicsText(lang: language)}",
-                                  style: kSubtitleTextStyle),
                               Container(
                                 height: topics.length * 100.0,
                                 child: ListView.builder(
-                                  physics: NeverScrollableScrollPhysics(),
+                                    physics: NeverScrollableScrollPhysics(),
                                     itemCount: topics.length,
                                     itemBuilder: (context, index) {
                                       return CourseContent(
                                         language: language,
                                         id: topics[index].topicID,
-                                        number: (index > 9)
-                                            ? index + 1
+                                        number: (index >= 9)
+                                            ? "${index + 1}"
                                             : "0${index + 1}",
-                                        questions: QuizBrain(topics[index].topicID).questionCount(),
+                                        questions:
+                                            QuizBrain(topics[index].topicID)
+                                                .questionCount(),
                                         title: topics[index].topicName,
                                         isDone: true,
                                       );
@@ -106,11 +106,20 @@ class _TopicScreenState extends State<TopicScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       GestureDetector(
-                          onTap: (){
-                            Navigator.pop(context);
-                          },
-                          child: SvgPicture.asset("assets/icons/arrow-left.svg", color: Colors.white,)),
-                      SvgPicture.asset("assets/icons/person.svg", color: Colors.white,),
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: SvgPicture.asset(
+                          "assets/icons/arrow-left.svg",
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(ScenarioBrain(language).scenarioName(scenario), style: kTitleTextStyle.copyWith(color: Colors.white)),
+                      SvgPicture.asset(
+                        "assets/icons/person.svg",
+                        color: Colors.white,
+                        width: 25,
+                      ),
                     ],
                   ),
                 ),
@@ -144,8 +153,8 @@ class CourseContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context){
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
           return QuizScreen(lang: language, topicID: id);
         }));
       },
@@ -165,7 +174,8 @@ class CourseContent extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "$questions ${Helper.questionsText(lang: language)}\n",
+                    text:
+                        "$questions ${Helper.questionsText(lang: language)}\n",
                     style: TextStyle(
                       color: kTextColor.withOpacity(.5),
                       fontSize: 18,
@@ -173,7 +183,7 @@ class CourseContent extends StatelessWidget {
                   ),
                   TextSpan(
                     text: title,
-                    style: kSubtitleTextStyle.copyWith(
+                    style: kTitleTextStyle.copyWith(
                       fontWeight: FontWeight.w600,
                       height: 1.5,
                     ),
@@ -186,11 +196,12 @@ class CourseContent extends StatelessWidget {
               margin: EdgeInsets.only(left: 20),
               height: 40,
               width: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: kGreenColor.withOpacity(isDone ? 1 : .5),
-              ),
-              child: Icon(Icons.play_arrow, color: Colors.white),
+//              decoration: BoxDecoration(
+//                shape: BoxShape.circle,
+//                color: kGreenColor.withOpacity(isDone ? 1 : .5),
+//              ),
+//              child: Icon(Icons.play_arrow, color: Colors.white),
+              child: SvgPicture.asset("assets/icons/question.svg"),
             )
           ],
         ),

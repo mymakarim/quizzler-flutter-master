@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 const kTextColor = Color(0xFF0D1333);
-const kBlueColor = Color(0xFF6E8AFA);
-const kBestSellerColor = Color(0xFFFFD073);
 const kRedColor = Color(0xFFC20231);
 const kGreenColor = Colors.green;
 
@@ -30,8 +28,8 @@ const kSubtitleTextStyle = TextStyle(
   fontSize: 18,
   color: kTextColor,
 );
-const appImage = "assets/images/fnk.png";
-const appTitle = "Fighter Not Killer";
+const appImage = "assets/images/100.jpg";
+const appTitle = "Conflict has rules too";
 
 class Helper {
   static svgImage({svg, width: 30.0, height: 30.0}) {
@@ -45,21 +43,21 @@ class Helper {
 
   static aboutTitle({@required lang}){
     if(lang == "دری"){
-      return "جنگجو قاتل نیست";
+      return "جنگ هم دارای قواعد میباشد";
     }else if(lang == "پشتو"){
-      return "جنگجو قاتل نیست";
+      return "جگړه هم اصول لري";
     } else{
-      return "Fighter Not Killer";
+      return "Conflict has rules too";
     }
   }
 
   static String scenarioTitle({@required lang}){
     if(lang == "دری"){
-      return "سیناریو ها";
+      return "دسته بندی ها";
     }else if(lang == "پشتو"){
-      return "سیناریوګانې";
+      return "وېشنيزې";
     } else{
-      return "Quiz Scenarios";
+      return "Categories";
     }
   }
 
@@ -67,7 +65,7 @@ class Helper {
     if(lang == "دری"){
       return "تبریک";
     }else if(lang == "پشتو"){
-      return "مبارک";
+      return "مبارک  شه";
     } else{
       return "Congratulations";
     }
@@ -77,7 +75,7 @@ class Helper {
     if(lang == "دری"){
       return "کلید جوابات";
     }else if(lang == "پشتو"){
-      return "ځواب";
+      return "ځوابونه";
     } else{
       return "Answer Key";
     }
@@ -172,9 +170,19 @@ class Helper {
     }
   }
 
+  static contactText({@required String lang}){
+    if(lang == "دری"){
+      return "تماس باما";
+    }else if(lang == "پشتو"){
+      return "موږ سره اړیکه ونیسئ";
+    } else{
+      return "Contact Us";
+    }
+  }
+
   static getFont({@required lang}){
     if(lang == "دری"){
-      return "Yekan";
+      return "iranSans";
     }else if(lang == "پشتو"){
       return "Nassim";
     } else{

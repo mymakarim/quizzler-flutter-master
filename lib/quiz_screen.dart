@@ -65,7 +65,7 @@ class _QuizScreenState extends State<QuizScreen> {
       if (userAnswer == correctAnswer) {
         scoreKeeper.add(Container(
           padding: EdgeInsets.all(5),
-          child: Helper.svgImage(svg: 'assets/icons/checked-green.svg'),
+          child: Helper.svgImage(svg: 'assets/icons/checked.svg'),
         ));
         Alert(
           context: context,
@@ -98,7 +98,7 @@ class _QuizScreenState extends State<QuizScreen> {
       } else {
         scoreKeeper.add(Container(
           padding: EdgeInsets.all(5),
-          child: Helper.svgImage(svg: 'assets/icons/cross-red.svg'),
+          child: Helper.svgImage(svg: 'assets/icons/cross.svg'),
         ));
         Alert(
           style: AlertStyle(
@@ -111,13 +111,13 @@ class _QuizScreenState extends State<QuizScreen> {
           buttons: [
             DialogButton(
               radius: BorderRadius.circular(5),
-              child: Text(
+              child: Center(child: Text(
                 Helper.continueText(lang: language),
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.w700),
-              ),
+              )),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -226,7 +226,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               children: <Widget>[
                                 Helper.svgImage(
                                     svg:
-                                        'assets/icons/checked-tick-svgrepo-com.svg'),
+                                        'assets/icons/checked.svg'),
                                 SizedBox(
                                   width: 20,
                                 ),
