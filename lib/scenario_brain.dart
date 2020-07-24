@@ -19,15 +19,15 @@ class ScenarioBrain {
     Scenario(sID: 103, name: "اسلحه ها", desc: "3 سناریو", image: "assets/images/category4.png", imageBig: "assets/images/big4.jpg"),
     Scenario(sID: 104, name: "اطفال", desc: "3 سناریو", image: "assets/images/category5.png", imageBig: "assets/images/big5.jpg"),
     Scenario(sID: 105, name: "بهداشت و کمک", desc: "4 سناریو", image: "assets/images/category6.png", imageBig: "assets/images/big6.jpg"),
-    Scenario(sID: 106, name: "فاز فرمانده", desc: "10 سناریو", image: "assets/images/category7.png", imageBig: "assets/images/big7.jpg"),
+    Scenario(sID: 106, name: "فاز  قوماندان", desc: "10 سناریو", image: "assets/images/category7.png", imageBig: "assets/images/big7.jpg"),
   ];
   List<Scenario> scenarioPashto = [
-    Scenario(sID: 200, name: "د دښمنیو تررسه کول", desc: "5 سناریو", image: "assets/images/category1.png", imageBig: "assets/images/big1.jpg"),
+    Scenario(sID: 200, name: "د جګړې ترسره کول", desc: "5 سناریو", image: "assets/images/category1.png", imageBig: "assets/images/big1.jpg"),
     Scenario(sID: 201, name: "بنسټیز حقونه", desc: "4 سناریو", image: "assets/images/category2.png", imageBig: "assets/images/big2.jpg"),
     Scenario(sID: 202, name: "تکتیکونه", desc: "4 سناریو", image: "assets/images/category3.png", imageBig: "assets/images/big3.jpg"),
-    Scenario(sID: 203, name: "وسلی", desc: "3 سناریو", image: "assets/images/category4.png", imageBig: "assets/images/big4.jpg"),
+    Scenario(sID: 203, name: "وسلې", desc: "3 سناریو", image: "assets/images/category4.png", imageBig: "assets/images/big4.jpg"),
     Scenario(sID: 204, name: "ماشومان", desc: "3 سناریو", image: "assets/images/category5.png", imageBig: "assets/images/big5.jpg"),
-    Scenario(sID: 205, name: "روغتیا پاملرنه او مرسته", desc: "4 سناریو", image: "assets/images/category6.png", imageBig: "assets/images/big6.jpg"),
+    Scenario(sID: 205, name: "روغتیایی خدمات او مرسته", desc: "4 سناریو", image: "assets/images/category6.png", imageBig: "assets/images/big6.jpg"),
     Scenario(sID: 206, name: "د قوماندان پړاو", desc: "10 سناریو", image: "assets/images/category7.png", imageBig: "assets/images/big7.jpg"),
   ];
 
